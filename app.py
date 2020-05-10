@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, session
+import os
+
+from flask import Flask, render_template, request, redirect, session, url_for
 from simplepam import authenticate
 
 app = Flask(__name__)
@@ -6,6 +8,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    if 'username' in session:
+        print(session['username'])
+
+        return render_template("home.html")
     return render_template('login.html')
 
 
@@ -16,14 +22,20 @@ def login():
         password = request.form['password']
         if authenticate(str(username), str(password)):
             username = request.form['username']
-            print(username)
+            session['username'] = username
             return render_template("home.html", username=username)
         else:
-            return 'Invalid username/password'
+            return redirect('/')
 
     return redirect('index')
 
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+
+
 if __name__ == "__main__":
-    app.debug = True
-    app.run(host="0.0.0.0")
+    app.secret_key = os.urandom(12)
+    app.run(host="0.0.0.0", port=None, debug=True)

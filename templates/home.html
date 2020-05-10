@@ -4,61 +4,61 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Pdf Viewer | Nalika - Material Admin Template</title>
+    <title>Autom8n</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.transitions.css') }}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meanmenu.min.css') }}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/morrisjs/morris.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morrisjs/morris.css') }}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/metisMenu/metisMenu.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/metisMenu/metisMenu-vertical.css') }}">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar/fullcalendar.print.min.css') }}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
 
 <body>
@@ -69,8 +69,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><img src="img/logo/logosn.png" alt="" /></strong>
+                <a href="index.html"><img class="main-logo" src="https://autom8n.com/images/logo/logo.png" style="width: 250px;height: 40px" alt="" /></a>
+
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -185,7 +185,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="{{ url_for('static', filename='img/logo/logo.png') }}" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/1.jpg" alt="">
+                                                                        <img src="{{ url_for ('static', filename='img/contact/1.jpg') }}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -243,7 +243,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/4.jpg" alt="">
+                                                                        <img src="{{ url_for ('static', filename='img/contact/4.jpg') }}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -255,7 +255,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/3.jpg" alt="">
+                                                                        <img src="{{ url_for ('static', filename='img/contact/3.jpg') }}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -267,7 +267,7 @@
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="img/contact/2.jpg" alt="">
+                                                                        <img src="{{ url_for ('static', filename='img/contact/2.jpg') }}" alt="">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -345,7 +345,7 @@
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
-															<span class="admin-name">Advanda Cro</span>
+															<span class="admin-name">{{ username }}</span>
 															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
@@ -357,7 +357,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+                                                        <li><a href="{{ url_for('logout') }}" ><span class="fa fa-lock author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -386,7 +386,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/4.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -399,7 +399,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/1.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -412,7 +412,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/2.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -425,7 +425,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/3.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -438,7 +438,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/4.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -451,7 +451,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/1.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -464,7 +464,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{{ url_for('static', filename='img/contact/2.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -477,7 +477,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/1.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -490,7 +490,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/2.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -503,7 +503,7 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
+                                                                                            <img src="{{ url_for ('static', filename='img/contact/3.jpg') }}" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -942,7 +942,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Autom8n.com</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -952,58 +952,58 @@
 
     <!-- jquery
 		============================================ -->
-    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="js/wow.min.js"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery-price-slider.js') }}"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="js/jquery.meanmenu.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.meanmenu.js') }}"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="js/jquery.sticky.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="{{ url_for('static', filename='js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollbar/mCustomScrollbar-active.js') }}"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="js/metisMenu/metisMenu.min.js"></script>
-    <script src="js/metisMenu/metisMenu-active.js"></script>
+    <script src="{{ url_for('static', filename='js/metisMenu/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/metisMenu/metisMenu-active.js') }}"></script>
     <!-- morrisjs JS
 		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
+    <script src="{{ url_for('static', filename='js/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sparkline/jquery.charts-sparkline.js') }}"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="js/calendar/moment.min.js"></script>
-    <script src="js/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
+    <script src="{{ url_for('static', filename='js/calendar/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/calendar/fullcalendar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/calendar/fullcalendar-active.js') }}"></script>
     <!-- pdf JS
 		============================================ -->
-    <script src="js/pdf/jquery.media.js"></script>
-    <script src="js/pdf/pdf-active.js"></script>
+    <script src="{{ url_for('static', filename='js/pdf/jquery.media.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pdf/pdf-active.js') }}"></script>
     <!-- tab JS
 		============================================ -->
-    <script src="js/tab.js"></script>
+    <script src="{{ url_for('static', filename='js/tab.js') }}"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="js/plugins.js"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
     <!-- main JS
 		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
