@@ -23,6 +23,7 @@ def login():
         if authenticate(str(username), str(password)):
             username = request.form['username']
             session['username'] = username
+            print(session['username'])
             return render_template("home.html", username=username)
         else:
             return redirect('/')
