@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask, render_template, request, redirect, session, url_for
-from pip._vendor.requests import Session
 from simplepam import authenticate
 
 app = Flask(__name__)
@@ -38,7 +37,5 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.config['SESSION_TYPE'] = 'memcached'
-    app.config['SECRET_KEY'] = 'super secret key'
-    sess = Session()
+    app.secret_key = os.urandom(12)
     app.run(host="0.0.0.0", port=None, debug=True)
