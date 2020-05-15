@@ -4,6 +4,9 @@ from flask import Flask, render_template, request, redirect, session, url_for
 from simplepam import authenticate
 
 app = Flask(__name__)
+app.config['SESSION_TYPE'] = 'memcached'
+app.config['SECRET_KEY'] = 'super secret key'
+sess = Session()
 
 
 @app.route("/")
@@ -22,8 +25,8 @@ def login():
         password = request.form['password']
         if authenticate(str(username), str(password)):
             username = request.form['username']
-
-
+            session['username'] = username
+            print(session['username'])
             return render_template("home.html", username=username)
         else:
             return redirect('/')
