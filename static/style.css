@@ -38,3 +38,6 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+nav li a.color{
+color: white;
+}
