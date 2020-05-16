@@ -38,5 +38,17 @@ def logout():
     return redirect('/')
 
 
+@app.route('/domainform')
+def domainform():
+    username=session.get('username')
+    return render_template("domain-form.html", username=username)
+
+
+@app.route('/adddomain', methods=['GET', 'POST'])
+def adddomain():
+    username = session.get('username')
+    return render_template('home.html',username=username)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=None, debug=True)
