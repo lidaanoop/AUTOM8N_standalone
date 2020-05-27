@@ -4,14 +4,22 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Add Domain</h5>
-            <form action="/adddomain" method="post">
+            <form action="#" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username">
+                    <input type="text" class="form-control" onkeyup="CheckAll()" name="username" id="username">
+                    <p class="red" style="height:50px;"></p>
+
                 </div>
-                <div class="form-group">
+
+                <div class="form-group" style="float: left;">
                     <label for="domainname">Enter Domain Name</label>
-                    <input type="text" class="form-control" id="domainname">
+                    http://<input  type="text" class="form-control" name="domainname" id="domainname">
+                    <p class="rez" style="height:50px;"></p>
+
+
+
+
                 </div>
                 <button type="submit" class="btn btn-danger">Submit</button>
             </form>
@@ -20,7 +28,34 @@
 </div>
 
 
+<script>
 
+  function CheckAll() {
+
+    var length = document.getElementById('username').value.length;
+    var value = document.getElementById('username').value;
+
+    for (var i = 0; i < length; i++) {
+        if (!(/^[0-9a-zA-Z_.-]+$/.test(value))) {
+            alert("username must be made of characters and numbers only");
+            return false;
+        }else{
+
+            return true;
+        }
+
+    }
+
+  }
+
+
+
+
+
+
+
+
+</script>
 
 
 {% endblock %}

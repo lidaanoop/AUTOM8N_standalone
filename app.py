@@ -46,8 +46,24 @@ def domainform():
 
 @app.route('/adddomain', methods=['GET', 'POST'])
 def adddomain():
+    dict = {}
+    if request.method == 'POST':
+
+        username = session.get('username')
+        username1 = request.form['username']
+        print(username1)
+        domainname = request.form['domainname']
+        print(domainname)
+        dict.update({""+username1+"": ""+domainname+""})
+        print(dict)
+    return render_template('home.html',username=username, dict = dict)
+
+
+@app.route('/listAllDomains', methods=['GET', 'POST'])
+def listAllDomains():
     username = session.get('username')
-    return render_template('home.html',username=username)
+
+    return render_template("listdomain.html",username=username, dict=dict)
 
 
 if __name__ == "__main__":
