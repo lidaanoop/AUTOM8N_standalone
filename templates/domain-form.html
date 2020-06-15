@@ -4,7 +4,7 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Add Domain</h5>
-            <form action="#" method="post">
+            <form action="/execute_action" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" onkeyup="CheckAll()" name="username" id="username">
@@ -21,6 +21,7 @@
 
 
                 </div>
+               <input type="hidden" id="custId" name="execute" value="adddomain">
                 <button type="submit" class="btn btn-danger">Submit</button>
             </form>
         </div>

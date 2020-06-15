@@ -1,7 +1,10 @@
-import os
-
+import os, dramatiq_dashboard, pika
+from celery import Celery
 from flask import Flask, render_template, request, redirect, session, url_for
+from pip._vendor import requests
 from simplepam import authenticate
+from autom8ntaskq import displaycelery
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -40,30 +43,31 @@ def logout():
 
 @app.route('/domainform')
 def domainform():
-    username=session.get('username')
+    username = session.get('username')
     return render_template("domain-form.html", username=username)
 
 
-@app.route('/adddomain', methods=['GET', 'POST'])
-def adddomain():
-    dict = {}
+@app.route('/execute_action', methods=['GET', 'POST'])
+def execute_action():
     if request.method == 'POST':
-
-        username = session.get('username')
-        username1 = request.form['username']
-        print(username1)
-        domainname = request.form['domainname']
-        print(domainname)
-        dict.update({""+username1+"": ""+domainname+""})
-        print(dict)
-    return render_template('home.html',username=username, dict = dict)
+        execute = request.form['execute']
+        print(execute)
+        if execute == 'adddomain':
+            username = session.get('username')
+            username1 = request.form['username']
+            print(username1)
+            domainname = request.form['domainname']
+            displaycelery.delay(domainname)
+            print(domainname)
+            return render_template('execute_action.html', username=username, dict=dict, execute=execute,
+                                   username1=username1, domainname=domainname)
 
 
 @app.route('/listAllDomains', methods=['GET', 'POST'])
 def listAllDomains():
     username = session.get('username')
 
-    return render_template("listdomain.html",username=username, dict=dict)
+    return render_template("listdomain.html", username=username, dict=dict)
 
 
 if __name__ == "__main__":
