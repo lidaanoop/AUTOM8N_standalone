@@ -1,7 +1,7 @@
-import os,pika
+import os
 from celery import Celery
 from flask import Flask, render_template, request, redirect, session, url_for
-from pip._vendor import requests
+
 from simplepam import authenticate
 from autom8ntaskq import displaycelery
 
