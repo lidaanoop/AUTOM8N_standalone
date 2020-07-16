@@ -64,17 +64,7 @@ def execute_action():
             domainname = request.form['domainname']
             results = displaycelery.delay()
             print(results.task_id)
-
             print(results.status)
-            get(results)
-            print(results.status)
-
-
-
-
-
-
-
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
                                    username1=username1, domainname=domainname)
 
