@@ -1,10 +1,15 @@
 import os
+import subprocess
+import time
 from celery import Celery
 from flask import Flask, render_template, request, redirect, session, url_for
-
+import celery.events.state
+from requests import get
 from simplepam import authenticate
 from autom8ntaskq import displaycelery
-
+from celery.result import AsyncResult
+from task import apps
+from celery.result import ResultBase
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -49,6 +54,7 @@ def domainform():
 
 @app.route('/execute_action', methods=['GET', 'POST'])
 def execute_action():
+    global username, username1, domainname
     if request.method == 'POST':
         execute = request.form['execute']
         print(execute)
@@ -57,8 +63,19 @@ def execute_action():
             username1 = request.form['username']
             print(username1)
             domainname = request.form['domainname']
-            displaycelery.delay(domainname)
-            print(domainname)
+            results = displaycelery.delay()
+            print(results.task_id)
+
+            print(results.status)
+            get(results)
+            print(results.status)
+
+
+
+
+
+
+
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
                                    username1=username1, domainname=domainname)
 
