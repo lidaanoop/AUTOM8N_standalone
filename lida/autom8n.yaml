@@ -1,5 +1,7 @@
 ---
-- name: Create a login user
+  -hosts: alina
+  tasks:
+    - name: Create a login user
     user:
       name: fideloper
       password: '???'
