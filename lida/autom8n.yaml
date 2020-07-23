@@ -1,16 +1,13 @@
 ---
  - name: Create a login user
-     user:
-      name: fideloper
-      password: '???'
-      groups: # Empty by default, here we give it some groups
-       - docker
-       - sudo
-      state: present
-      shell: /bin/bash       # Defaults to /bin/bash
-      system: no             # Defaults to no
-      createhome: yes        # Defaults to yes
-      home: /home/fideloper  # Defaults to /home/<username>
+   user:
+     name: fideloper
+     password: '???'
+     state: present
+     shell: /bin/bash       # Defaults to /bin/bash
+     system: no             # Defaults to no
+     createhome: yes        # Defaults to yes
+     home: /home/fideloper  # Defaults to /home/<username>
 
 
 
