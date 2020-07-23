@@ -1,5 +1,5 @@
 ---
- - name: Create a login user
+ -name: Create a login user
    user:
      name: fideloper
      password: '???'
