@@ -8,12 +8,4 @@
        system: no             # Defaults to no
        createhome: yes        # Defaults to yes
        home: /home/fideloper  # Defaults to /home/<username>
-
-
-
-
-
-
-
-
 ...
