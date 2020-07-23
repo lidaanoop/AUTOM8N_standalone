@@ -4,6 +4,11 @@
      - name: install nginx
        yum:
           name: nginx
-          state: absent
+          state: present
+  tasks:
+    - name: install appachae
+      yum:
+        name: appachae
+        state: present
 
 ...
