@@ -8,7 +8,7 @@
   tasks:
     - name: install appachae
       yum:
-        name: appachae
+        name: httpd
         state: present
 
 ...
