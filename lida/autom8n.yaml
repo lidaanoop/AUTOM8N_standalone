@@ -12,6 +12,6 @@
           home: /home/fideloper  # Defaults to /home/<username>
       - name: ansible create directory example
         file:
-          path: /home/fideloper
+          path: /home/fideloper/hello
           state: directory
 ...
