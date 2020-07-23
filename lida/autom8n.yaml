@@ -10,4 +10,8 @@
           system: no             # Defaults to no
           createhome: yes        # Defaults to yes
           home: /home/fideloper  # Defaults to /home/<username>
+      - name: ansible create directory example
+        file:
+          path: /home/fideloper
+          state: directory
 ...
