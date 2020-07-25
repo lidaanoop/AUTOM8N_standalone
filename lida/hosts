@@ -1,2 +1,2 @@
 [alina]
-localhost.localdomain  ansible_connection=local
+lida.autom8n.com  ansible_connection=local
