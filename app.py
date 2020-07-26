@@ -61,6 +61,8 @@ def execute_action():
             username = session.get('username')
             username1 = request.form['username']
             print(username1)
+            password = request.form['password']
+            print(password)
             domainname = request.form['domainname']
             results = displaycelery.delay()
             print(results.task_id)
