@@ -64,11 +64,12 @@ def execute_action():
             password = request.form['password']
             print(password)
             domainname = request.form['domainname']
+            print(domainname)
             results = displaycelery.delay()
             print(results.task_id)
             print(results.status)
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
-                                   username1=username1, domainname=domainname)
+                                   username1=username1, domainname=domainname, password=password)
 
 
 @app.route('/listAllDomains', methods=['GET', 'POST'])
