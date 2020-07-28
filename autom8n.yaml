@@ -4,10 +4,10 @@
       - name: Create a login user
         user:
           username: "{{ username }}"
-          password: ""{{ password }}"
+          password: "{{ password }}"
           state: present
       - name: ansible create directory example
         file:
-          path: /home/{{ username }}/hello
+          path: /home/"{{ username }}"/hello
           state: directory
 ...
