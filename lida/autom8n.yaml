@@ -3,8 +3,8 @@
     tasks:
       - name: Create a login user
         user:
-          name: fideloper
-          password: '???'
+          username: {{}}
+          password: {{}}
           state: present
           shell: /bin/bash       # Defaults to /bin/bash
           system: no             # Defaults to no
