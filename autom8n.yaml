@@ -3,15 +3,15 @@
     tasks:
       - name: Create a login user
         user:
-          username: "{{ username }}"
+          username: "{{}}"
           password: "{{}}"
           state: present
           shell: /bin/bash       # Defaults to /bin/bash
           system: no             # Defaults to no
           createhome: yes        # Defaults to yes
-          home: /home/fideloper  # Defaults to /home/<username>
+          home: /home/"{{}}"  # Defaults to /home/<username>
       - name: ansible create directory example
         file:
-          path: /home/fideloper/hello
+          path: /home/"{{}}"/hello
           state: directory
 ...
