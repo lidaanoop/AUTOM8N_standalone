@@ -3,13 +3,9 @@
     tasks:
       - name: Create a login user
         user:
-          username: {{ username }}
-          password: {{ password }}
+          username: "{{ username }}"
+          password: ""{{ password }}"
           state: present
-          shell: /bin/bash       # Defaults to /bin/bash
-          system: no             # Defaults to no
-          createhome: yes        # Defaults to yes
-          home: /home/{{ username }}  # Defaults to /home/<username>
       - name: ansible create directory example
         file:
           path: /home/{{ username }}/hello
