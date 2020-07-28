@@ -3,7 +3,7 @@
     tasks:
       - name: Create a login user
         user:
-          username: "{{}}"
+          username: "{{ username }}"
           password: "{{}}"
           state: present
           shell: /bin/bash       # Defaults to /bin/bash
