@@ -3,7 +3,7 @@
     tasks:
       - name: Create a login user
         user:
-          username: "{{ username }}"
+          name: "{{ username }}"
           password: "{{ password }}"
           state: present
       - name: ansible create directory example
