@@ -22,4 +22,4 @@ def displaycelery(username1,password,domainname):
         # x = subprocess.call('sudo yum -y install nginx', shell=True,)
         # x = subprocess.call('ansible-playbook -i hosts autom8n.yaml --extra-vars "@sample.json"', shell=True)
 
-    return (x)
+    return ()
