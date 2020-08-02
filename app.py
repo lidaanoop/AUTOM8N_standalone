@@ -61,12 +61,12 @@ def execute_action():
             username = session.get('username')
             username1 = request.form['username']
             print(username1)
-            
+
             password = request.form['password']
             print(password)
             domainname = request.form['domainname']
             print(domainname)
-            results = displaycelery.delay()
+            results = displaycelery.delay(username1,password,domainname)
             print(results.task_id)
             print(results.status)
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,

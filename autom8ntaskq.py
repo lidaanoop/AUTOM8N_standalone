@@ -7,7 +7,7 @@ app = Celery('autom8ntaskq', broker='redis://localhost:6379/0', backend="redis:/
 
 
 @app.task
-def displaycelery():
+def displaycelery(username1,password,domainname):
     dictionary={
     "username": username1,
     "password": password,
