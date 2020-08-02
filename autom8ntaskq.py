@@ -9,9 +9,9 @@ app = Celery('autom8ntaskq', broker='redis://localhost:6379/0', backend="redis:/
 @app.task
 def displaycelery():
     dictionary={
-    "username": " +username1+ ",
-    "password": "+password+",
-    "domainname": "+domainname+"
+    "username": "username1",
+    "password": "password",
+    "domainname": "domainname"
     }
     json_object = json.dumps(dictionary, indent = 4)
     with open("sample.json", "w") as outfile:
