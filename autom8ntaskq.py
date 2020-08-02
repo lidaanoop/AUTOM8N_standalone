@@ -1,5 +1,6 @@
 from celery import Celery
 import subprocess, json
+from requests import get
 
 app = Celery('autom8ntaskq', broker='redis://localhost:6379/0', backend="redis://localhost:6379/0")
 
