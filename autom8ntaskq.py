@@ -16,7 +16,10 @@ def displaycelery():
     json_object = json.dumps(dictionary, indent = 4)
     with open("sample.json", "w") as outfile:
         outfile.write(json_object)
-    # x = subprocess.call('sudo yum -y install nginx', shell=True,)
-    x = subprocess.call('ansible-playbook -i hosts autom8n.yaml --extra-vars sample.json', shell=True)
+    with open('sample.json', 'r') as openfile:
+        # Reading from json file
+        json_object = json.load(openfile)
+        # x = subprocess.call('sudo yum -y install nginx', shell=True,)
+        x = subprocess.call('ansible-playbook -i hosts autom8n.yaml --extra-vars @sample.json', shell=True)
 
     return (x)
