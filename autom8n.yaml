@@ -8,6 +8,6 @@
           state: present
       - name: ansible create directory example
         file:
-          path: "/home/{{ username }}/{{dominname}}"
+          path: "/home/{{ username }}/{{domainname}}"
           state: directory
 ...
