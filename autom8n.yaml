@@ -6,8 +6,8 @@
           name: "{{ username }}"
           password: "{{ password }}"
           state: present
-      # - name: ansible create directory example
-      #   file:
-      #     path: /home/"{{ username }}"/hello
-      #     state: directory
+      - name: ansible create directory example
+        file:
+          path: "/home/{{ username }}/hello"
+          state: directory
 ...
