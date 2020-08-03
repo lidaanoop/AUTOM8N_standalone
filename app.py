@@ -64,13 +64,15 @@ def execute_action():
 
             password = request.form['password']
             print(password)
+            q = subprocess.call('echo "password" > password_file',shell=True)
+            w = subprocess.call('ansible-vault edit --vault-id password_file secret.yml',shell=True)
             domainname = request.form['domainname']
             print(domainname)
-            results = displaycelery.delay(username1,password,domainname)
+            results = displaycelery.delay(username1,w,domainname)
             print(results.task_id)
             print(results.status)
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
-                                   username1=username1, domainname=domainname, password=password)
+                                   username1=username1, domainname=domainname,w=w)
 
 
 @app.route('/listAllDomains', methods=['GET', 'POST'])
