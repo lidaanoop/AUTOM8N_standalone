@@ -65,7 +65,7 @@ def execute_action():
             print(username1)
 
             password = request.form['password']
-            print(password)
+            
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,password,domainname)
