@@ -1,10 +1,12 @@
 ---
   - hosts: alina
+    vars_files:
+      - autom8n.yaml
     tasks:
       - name: Create a login user
         user:
           name: "{{ username }}"
-          password: "{{ password }}"
+          password: "{{ password }} | password_hash('sha512')"
           state: present
       - name: ansible create directory example
         file:
