@@ -10,6 +10,7 @@ from autom8ntaskq import displaycelery
 from celery.result import AsyncResult
 from celery.result import ResultBase
 import hashlib
+import crypt, getpass
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -65,7 +66,10 @@ def execute_action():
 
             password = request.form['password']
             print(password)
-            passw = subprocess.call('python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'', shell=True)
+            passw=getpass.getpass()
+            print(crypt.crypt(passw)
+            if (passw==getpass.getpass("Confirm: ")):
+                else exit()
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,passw,domainname)
