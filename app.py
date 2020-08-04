@@ -66,10 +66,8 @@ def execute_action():
 
             password = request.form['password']
             print(password)
-            passw=getpass.getpass()
-            print(crypt.crypt(passw)
-            if (passw==getpass.getpass("Confirm: "))
-                else exit()
+            passw=getpass.getpass(password)
+            print(crypt.crypt(passw) if (passw==getpass.getpass("Confirm: ")) else exit())
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,passw,domainname)
