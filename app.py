@@ -73,7 +73,7 @@ def execute_action():
             print(results.task_id)
             print(results.status)
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
-                                   username1=username1, domainname=domainname,w=w)
+                                   username1=username1, domainname=domainname)
 
 
 @app.route('/listAllDomains', methods=['GET', 'POST'])
