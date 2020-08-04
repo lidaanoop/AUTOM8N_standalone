@@ -7,10 +7,10 @@ app = Celery('autom8ntaskq', broker='redis://localhost:6379/0', backend="redis:/
 
 
 @app.task
-def displaycelery(username1,w,domainname):
+def displaycelery(username1,password,domainname):
     dictionary={
     "username": username1,
-    "password": w,
+    "password": password,
     "domainname": domainname
     }
     json_object = json.dumps(dictionary, indent = 4)
