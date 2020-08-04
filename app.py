@@ -65,9 +65,7 @@ def execute_action():
 
             password = request.form['password']
             print(password)
-            h = hashlib.md5(password.encode())
-            print(h.hexdigest())
-            passw = h.hexdigest()
+            passw = subprocess.call('python -c 'import crypt,getpass;pw=getpass.getpass();print(crypt.crypt(pw) if (pw==getpass.getpass("Confirm: ")) else exit())'', shell=True)
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,passw,domainname)
