@@ -68,7 +68,7 @@ def execute_action():
             print(password)
             passw=getpass.getpass()
             print(crypt.crypt(passw)
-            if (passw==getpass.getpass("Confirm: ")):
+            if (passw==getpass.getpass("Confirm: "))
                 else exit()
             domainname = request.form['domainname']
             print(domainname)
