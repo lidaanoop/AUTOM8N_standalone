@@ -9,6 +9,7 @@ from simplepam import authenticate
 from autom8ntaskq import displaycelery
 from celery.result import AsyncResult
 from celery.result import ResultBase
+import hashlib
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -64,9 +65,8 @@ def execute_action():
 
             password = request.form['password']
             print(password)
-            def encrypt_password(password):
-                return pwd_context.encrypt(password)
-                print(password)
+            h = hashlib.md5(password.encode())
+            print(h.hexdigest())
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,password,domainname)
