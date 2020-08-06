@@ -1,0 +1,13 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /home/{{ username }}/{{ domainname }};
+
+
+        server_name _{{ domainname }};
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
