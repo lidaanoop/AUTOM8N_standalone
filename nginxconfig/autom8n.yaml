@@ -1,7 +1,6 @@
 ---
   - name: Nginx configuration
     hosts: alina
-    connection: localhost
+    # connection: localhost
     roles:
       - nginxconf
-      
