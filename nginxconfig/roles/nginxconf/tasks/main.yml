@@ -10,6 +10,6 @@
       state: directory
   - name: Create a domain file in /etc/nginx/sites-enabled/
     file:
-      path: "/etc/nginx/sites-enabled{{ domainname}}.conf"
+      path: "/etc/nginx/sites-enabled/{{ domainname}}.conf"
       state: touch
 ...
