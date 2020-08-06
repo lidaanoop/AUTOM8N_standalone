@@ -14,7 +14,7 @@
       state: touch
   - name: Copy file with owner and permissions
     copy:
-      src: /nginxconf/templates/nginxconf.j2
+      src: /roles/nginxconf/templates/nginxconf.j2
       dest: /etc/nginx/sites-enabled/{{ domainname}}.conf
-      
+
 ...
