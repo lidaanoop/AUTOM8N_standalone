@@ -21,7 +21,8 @@ window.onclick = function(event) {
 
 $('#domainname').on('keyup', function(){
     if(!validateDomain($(this).val())){
-        $('.rez').text('invalid domain')
+        alert("invalid domain");
+        // $('.rez').text('invalid domain')
 
     }else{
         $('.rez').text('valid domain')
@@ -59,4 +60,3 @@ function validateDomain(the_domain)
     }
 
   }
-
