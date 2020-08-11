@@ -14,7 +14,7 @@
       dest: /etc/nginx/sites-enabled/{{ domainname}}.conf
   - name: appache configuration using template render
     template:
-      src: nginxconf.j2
+      src: appacheconf.j2
       dest: /etc/httpd/sites-enabled/{{ domainname}}.conf
 
 ...

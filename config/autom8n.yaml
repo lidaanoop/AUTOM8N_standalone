@@ -3,4 +3,4 @@
     hosts: alina
     # connection: localhost
     roles:
-      - nginxconf
+      - configuration
