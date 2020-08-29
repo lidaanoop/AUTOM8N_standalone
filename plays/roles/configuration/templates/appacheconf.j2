@@ -1,13 +1,5 @@
-server {
-        listen 8000;
-        ServerName {{ domainname }}:8000
-
-        root /home/{{ username }}/{{ domainname }};
-
-
-        server_name {{ domainname }};
-
-        location / {
-                try_files $uri $uri/ =404;
-        }
-}
+<VirtualHost {{ domainname }}:9999>
+  ServerName {{ domainname }}
+    ServerAlias {{ domainname}}
+  DocumentRoot /home/{{ username }}/{{ domainname}}
+  </VirtualHost>
