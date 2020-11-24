@@ -39,7 +39,7 @@ def login():
             else:
                 return redirect('/')
         else:
-            return redirect('/')        
+            return render_template("user_home.html", username=username)        
     return redirect('index')
 
 
