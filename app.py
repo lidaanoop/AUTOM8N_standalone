@@ -15,7 +15,7 @@ import crypt, getpass
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-
+#index page
 @app.route("/")
 def index():
     if 'username' in session:
@@ -24,7 +24,7 @@ def index():
         return render_template("home.html")
     return render_template('login.html')
 
-
+#login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -39,22 +39,22 @@ def login():
             else:
                 return redirect('/')
         else:
-            return render_template("user_home.html", username=username)        
+            return render_template("user_home.html", username=username)
     return redirect('index')
 
-
+#log out
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
 
-
+#add username domain name and password for root
 @app.route('/domainform')
 def domainform():
     username = session.get('username')
     return render_template("domain-form.html", username=username)
 
-
+#submission of username password and domainname of root
 @app.route('/execute_action', methods=['GET', 'POST'])
 def execute_action():
     global username, username1, domainname
@@ -76,12 +76,31 @@ def execute_action():
             return render_template('execute_action.html', username=username, dict=dict, execute=execute,
                                    username1=username1, domainname=domainname)
 
-
+#list of username and password of root
 @app.route('/listAllDomains', methods=['GET', 'POST'])
 def listAllDomains():
     username = session.get('username')
 
     return render_template("listdomain.html", username=username, dict=dict)
+
+@app.route('/user_domainform')
+def user_domainform():
+    username = session.get('username')
+    return render_template("userdomain-form.html", username=username)
+
+#submission of  domainname of user
+@app.route('/userexecute_action', methods=['GET', 'POST'])
+def execute_action():
+    global domainname
+    if request.method == 'POST':
+        execute = request.form['execute']
+        print(execute)
+        if execute == 'adddomain':
+            domainname = request.form['domainname']
+            print(domainname)
+            return render_template('userexecute_action.html', username=username, dict=dict, execute=execute,
+                                   username1=username1, domainname=domainname)
+
 
 
 if __name__ == "__main__":

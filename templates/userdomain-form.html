@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<div style="padding-top:250px; padding-left: 750px; margin-bottom: 125px;">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Add Domain</h5>
+            <form action="/userexecute_action" method="post">
+
+
+
+                <div class="form-group" style="float: left;">
+                    <label for="domainname">Enter Domain Name</label>
+                    http://<input  type="text" class="form-control" name="domainname" id="domainname">
+                    <p class="rez" style="height:50px"></p>
+
+
+
+
+                </div>
+               <input type="hidden" id="custId" name="execute" value="adddomain">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
