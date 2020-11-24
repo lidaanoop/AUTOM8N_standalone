@@ -30,14 +30,16 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if authenticate(str(username), str(password)):
-            username = request.form['username']
-            session['username'] = username
-            print(session['username'])
-            return render_template("home.html", username=username)
+        if username == 'root':
+            if authenticate(str(username), str(password)):
+                username = request.form['username']
+                session['username'] = username
+                print(session['username'])
+                return render_template("home.html", username=username)
+            else:
+                return redirect('/')
         else:
-            return redirect('/')
-
+            return redirect('index')        
     return redirect('index')
 
 
@@ -65,7 +67,7 @@ def execute_action():
             print(username1)
 
             password = request.form['password']
-            
+
             domainname = request.form['domainname']
             print(domainname)
             results = displaycelery.delay(username1,password,domainname)
