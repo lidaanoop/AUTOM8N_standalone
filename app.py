@@ -39,7 +39,7 @@ def login():
             else:
                 return redirect('/')
         else:
-            return redirect('index')        
+            return redirect('/')        
     return redirect('index')
 
 
