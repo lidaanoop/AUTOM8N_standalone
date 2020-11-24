@@ -90,7 +90,7 @@ def user_domainform():
 
 #submission of  domainname of user
 @app.route('/userexecute_action', methods=['GET', 'POST'])
-def execute_action():
+def userexecute_action():
     global domainname
     if request.method == 'POST':
         execute = request.form['execute']
