@@ -98,8 +98,7 @@ def execute_action():
         if execute == 'adddomain':
             domainname = request.form['domainname']
             print(domainname)
-            return render_template('userexecute_action.html', username=username, dict=dict, execute=execute,
-                                   username1=username1, domainname=domainname)
+            return render_template('userexecute_action.html', domainname=domainname)
 
 
 
