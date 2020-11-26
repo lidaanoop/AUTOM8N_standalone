@@ -30,16 +30,18 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if username == 'root':
+
             if authenticate(str(username), str(password)):
                 username = request.form['username']
                 session['username'] = username
                 print(session['username'])
+                if username == 'root':
                 return render_template("home.html", username=username)
+                else:
+                    return render_template("user_home.html", username=username)
             else:
                 return redirect('/')
-        else:
-            return render_template("user_home.html", username=username)
+
     return redirect('index')
 
 #log out
@@ -83,7 +85,7 @@ def listAllDomains():
 
     return render_template("listdomain.html", username=username, dict=dict)
 
-@app.route('/user_domainform')
+@app.route('/user_domainname')
 def user_domainform():
     username = session.get('username')
     return render_template("userdomain-form.html", username=username)
