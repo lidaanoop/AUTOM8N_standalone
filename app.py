@@ -31,16 +31,16 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-            if authenticate(str(username), str(password)):
-                username = request.form['username']
-                session['username'] = username
-                print(session['username'])
-                if username == 'root':
-                    return render_template("home.html", username=username)
-                else:
-                    return render_template("user_home.html", username=username)
+        if authenticate(str(username), str(password)):
+            username = request.form['username']
+            session['username'] = username
+            print(session['username'])
+            if username == 'root':
+                return render_template("home.html", username=username)
             else:
-                return redirect('/')
+                return render_template("user_home.html", username=username)
+        else:
+            return redirect('/')
 
     return redirect('index')
 
