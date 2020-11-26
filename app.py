@@ -36,7 +36,7 @@ def login():
                 session['username'] = username
                 print(session['username'])
                 if username == 'root':
-                return render_template("home.html", username=username)
+                    return render_template("home.html", username=username)
                 else:
                     return render_template("user_home.html", username=username)
             else:
