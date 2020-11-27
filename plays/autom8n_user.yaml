@@ -1,6 +1,6 @@
 ---
   - name: user domainname adding
-    hosts: autom8n_user
+    hosts: alina
     # connection: localhost
     roles:
       - user_domain
