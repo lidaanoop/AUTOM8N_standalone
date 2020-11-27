@@ -1,0 +1,15 @@
+---
+  - name: ansible create directory example
+    file:
+      path: "/home/{{ username }}/{{domainname}}"
+      state: directory
+  - name: nginx configuration using template render
+    template:
+      src: nginxconf.j2
+      dest: /etc/nginx/sites-enabled/{{ domainname}}.conf
+  - name: appache configuration using template render
+    template:
+      src: appacheconf.j2
+      dest: /etc/httpd/sites-enabled/{{ domainname}}.conf
+
+...

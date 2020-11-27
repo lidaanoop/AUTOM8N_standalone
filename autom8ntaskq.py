@@ -23,3 +23,17 @@ def displaycelery(username1,password,domainname):
         x = subprocess.call('ansible-playbook -i hosts plays/autom8n.yaml --extra-vars "@sample.json"', shell=True)
 
     return (x)
+
+@app.task
+def displaycelery1(username,domainname):
+    dict ={
+    "username": username,
+    "domainname": domainname
+    }
+    json_object = json.dumps(dict, indent = 4)
+    with open("sample1.json","w")as outfile:
+        outfile.write(json_object)
+    with open("sample1.json","r")as openfile:
+        json_object = json.load(openfile)
+        x = subprocess.call('ansible-playbook -i hosts plays/autom8n_user.yaml --extra-vars "@sample1.json"', shell=True)
+    return(x)

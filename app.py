@@ -99,8 +99,10 @@ def userexecute_action():
         print(execute)
         if execute == 'adddomain':
             domainname = request.form['domainname']
+            username = session.get('username')
             print(domainname)
-            return render_template('userexecute_action.html', domainname=domainname)
+            result = displaycelery1.delay(username,domainname)
+            return render_template('userexecute_action.html', domainname=domainname,username=username)
 
 
 

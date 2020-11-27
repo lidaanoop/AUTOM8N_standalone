@@ -1,0 +1,6 @@
+---
+  - name: user domainname adding
+    hosts: autom8n_user
+    # connection: localhost
+    roles:
+      - user_domain
