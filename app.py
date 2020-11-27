@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect, session, url_for
 import celery.events.state
 from requests import get
 from simplepam import authenticate
-from autom8ntaskq import displaycelery
+from autom8ntaskq import displaycelery, displaycelery1
 from celery.result import AsyncResult
 from celery.result import ResultBase
 import hashlib
